@@ -1,0 +1,26 @@
+class ssh_config {
+	package {
+		"ssh": ensure => installed;
+	}
+	file { " /etc/puppet/manifests/modules/sshd/ssh_config" :
+		source => [ 
+			"puppet:///modules/sshd/$hostname/ssh_config",
+			"puppet:///modules/sshd/ssh_config",
+		],
+		mode	 => 444,
+		owner	 => root, 
+		group	 => root,
+		require => Package["ssh"] ,
+	}
+
+	service { "ssh_config":
+		enable		=> true,
+		ensure 		=> running,
+		hasstatus 	=> true,
+		hasrestart	=> true,
+		require		=> [ Package["ssh"],
+					File["/etc/ssh_config"] ],
+		subscribe	=> File["/etc/ssh_config" ],
+	}
+}
+
