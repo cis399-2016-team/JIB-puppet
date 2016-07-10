@@ -1,5 +1,5 @@
 node ip-10-0-3-181 {
-	include sshd
+	include ssh
 }
 
 node ip-10-0-2-53 {
