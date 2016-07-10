@@ -1,4 +1,3 @@
-import "modules/*"
 node ip-10-0-3-181 {
 	include ssh
 }
