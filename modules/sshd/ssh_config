@@ -4,7 +4,7 @@ class ssh_config {
 	}
 	file { " /etc/puppet/manifests/modules/sshd/ssh_config" :
 		source => [ 
-			"puppet:///modules/sshd/$hostname/ssh_config",
+			"puppet:///modules/sshd/ssh_config",
 			"puppet:///modules/sshd/ssh_config",
 		],
 		mode	 => 444,
