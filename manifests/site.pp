@@ -1,6 +1,4 @@
-import '/etc/puppet/modules/
-
-sshd/manifests/init.pp'
+import '/etc/puppet/modules/sshd/manifests/init.pp'
 
 node ip-10-0-2-226 {
 	include ssh
