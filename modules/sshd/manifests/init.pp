@@ -18,6 +18,6 @@ class ssh {
 		hasrestart => true,
 		enable => true,
 		require => Package["ssh"],
-		subscribe => File["/etc/ssh_config" ],
+		subscribe => File["/etc/puppet/modules/sshd/files/sshd_config" ],
 	}
 }
