@@ -10,7 +10,6 @@ class ssh {
 		group => 'root',
 		mode => '644',
 		source => "puppet:///modules/sshd/sshd_config",
-		notify => Class["ssh::service"],
 	}
 
 	service { "ssh":
@@ -18,5 +17,7 @@ class ssh {
 		hasstatus => true,
 		hasrestart => true,
 		enable => true,
+		require => Package["ssh"],
+		subscribe => File["/etc/ssh_config" ],
 	}
 }
