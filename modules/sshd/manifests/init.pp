@@ -1,6 +1,6 @@
 class ssh {
 
-	package { "ssh":
+	package { "openssh-server":
 		ensure => present,
 	}
 
@@ -17,7 +17,8 @@ class ssh {
 		hasstatus => true,
 		hasrestart => true,
 		enable => true,
-		require => Package["ssh"],
+		require => Package["openssh-server"],
 		#subscribe => File["/etc/puppet/modules/sshd/files/sshd_config" ],
 	}
+
 }
