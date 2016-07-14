@@ -11,7 +11,7 @@ class ssh::install {
 
 class ssh::config {
 
-	file { "/etc/sshsshd_config":
+	file { "/etc/ssh/sshd_config":
 		ensure => present,
 		mode => 644,
 		source => "puppet:///modules/ssh/files/sshd_config",
