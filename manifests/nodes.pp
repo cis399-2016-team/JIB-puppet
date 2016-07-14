@@ -7,4 +7,5 @@ node default {
 
 node ip-10-0-3-181 {
 	include sshd
+	include ec2-agents
 }
