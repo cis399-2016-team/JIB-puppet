@@ -21,14 +21,14 @@ class sshd {
 		#subscribe => File["/etc/puppet/modules/sshd/files/sshd_config" ],
 	}
 
-	service { "ssh":
-                ensure => running,
-                hasstatus => true,
-                hasrestart => true,
-                enable => true,
-                require => Package["openssh-server"],
+	#service { "ssh":
+        #        ensure => running,
+        #        hasstatus => true,
+        #        hasrestart => true,
+        #        enable => true,
+        #        require => Package["openssh-server"],
                 #subscribe => File["/etc/puppet/modules/sshd/files/sshd_config" ],
-        }
+        #}
 
 
 }
