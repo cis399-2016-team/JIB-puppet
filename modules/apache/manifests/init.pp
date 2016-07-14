@@ -10,4 +10,10 @@ class apache {
                 require => Package["httpd"],
         }
 
+	file { "/etc/httpd/conf/httpd.conf":
+		ensure => present,
+		mode => 644,
+		source => "puppet:///modules/apache/httpd.conf",
+	}
+
 }
