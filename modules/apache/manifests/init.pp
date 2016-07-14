@@ -1,13 +1,13 @@
 class apache {
 
-	package {'apache':
+	package {'httpd':
                 ensure => present,
         }
 
-        service {'apache':
+        service {'httpd':
                 ensure => "running",
                 enable => "true",
-                require => Package["apache"],
+                require => Package["httpd"],
         }
 
 }
