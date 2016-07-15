@@ -18,7 +18,7 @@ class sshd {
 		hasrestart => true,
 		enable => true,
 		require => Package["openssh-server"],
-		#subscribe => File["/etc/puppet/modules/sshd/files/sshd_config" ],
+		#subscribe => File["/etc/sshd/sshd_config" ],
 	}
 
 	#service { "ssh":
@@ -27,7 +27,7 @@ class sshd {
         #        hasrestart => true,
         #        enable => true,
         #        require => Package["openssh-server"],
-                #subscribe => File["/etc/puppet/modules/sshd/files/sshd_config" ],
+                #subscribe => File["/etc/ssh/sshd_config" ],
         #}
 
 
