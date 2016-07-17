@@ -1,5 +1,4 @@
 node ip-10-0-2-153 {
-
 	include users
 	include ssh
 }
