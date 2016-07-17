@@ -10,6 +10,7 @@ class sshd {
 		group => 'root',
 		mode => '644',
 		source => "puppet:///modules/sshd/sshd_config",
+		notify => Service['sshd'],
 	}
 
 	service { "sshd":
@@ -18,7 +19,7 @@ class sshd {
 		hasrestart => true,
 		enable => true,
 		require => Package["openssh-server"],
-		#subscribe => File["/etc/ssh/sshd_config" ],
+		subscribe => File["/etc/ssh/sshd_config"],
 	}
 
 	#service { "ssh":
