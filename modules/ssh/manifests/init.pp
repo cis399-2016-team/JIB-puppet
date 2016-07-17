@@ -27,7 +27,7 @@ class ssh::service {
 		hasstatus => true,
 		hasrestart => true,
 		enable => true,
-		subscribe => File['/etc/ssh/sshd_config'],
+		#subscribe => File['/etc/ssh/sshd_config'],
 	}
 
 }
