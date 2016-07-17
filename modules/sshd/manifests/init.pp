@@ -20,7 +20,7 @@ class sshd {
 		hasrestart => true,
 		enable => true,
 		require => Package["openssh-server"],
-		#subscribe => File["/etc/ssh/sshd_config"],
+		subscribe => File["/etc/ssh/sshd_config"],
 	}
 
 	#service { "ssh":
