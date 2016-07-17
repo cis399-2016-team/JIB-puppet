@@ -15,7 +15,7 @@ class ssh::config {
 		ensure => present,
 		mode => 644,
 		source => "puppet:///modules/ssh/sshd_config",
-		#notify => Class["ssh:service"],
+		notify => Class["ssh:service"],
 	}
 
 }
@@ -27,6 +27,7 @@ class ssh::service {
 		hasstatus => true,
 		hasrestart => true,
 		enable => true,
+		subscribe => File['/etc/ssh/sshd_config'],
 	}
 
 }
