@@ -2,7 +2,6 @@ node ip-10-0-2-153 {
 
 	include users
 	include ssh
-
 }
 
 node ip-10-0-3-181 {
