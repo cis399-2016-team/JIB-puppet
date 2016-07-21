@@ -61,25 +61,4 @@ class ec2-agents {
 		gid    => '502',
 	}
 
-	user { 'JIB':
-		ensure => 'present',
-		home => '/home/JIB',
-		shell => '/bin/bash',
-		groups => 'cis399',
-	}
-
-	user { 'chilled-beer':
-                ensure => 'present',
-                home => '/home/chilled-beer',
-                shell => '/bin/bash',
-                groups => 'cis399',
-        }
-
-	user { 'rumpus':
-                ensure => 'present',
-                home => '/home/rumpus',
-                shell => '/bin/bash',
-                groups => 'cis399',
-        }
-
 }

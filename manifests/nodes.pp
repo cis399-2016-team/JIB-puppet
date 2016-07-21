@@ -17,6 +17,9 @@ node ip-10-0-3-181 {
 	include web-content
 	include accounts
   	realize (Accounts::Virtual['orange-banana'])
+	realize (Accounts::Virtual['team-a'])
+	realize (Accounts::Virtual['caluyacostello'])
+	realize (Accounts::Virtual['that-one-team'])
 }
 
 node ip-10-0-2-226 {
