@@ -1,4 +1,4 @@
-define accounts::virtual ($uid,$realname) {
+define accounts::virtual ($uid) {
 
   user { $title:
     ensure            =>  'present',
