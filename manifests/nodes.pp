@@ -15,6 +15,8 @@ node ip-10-0-3-181 {
 	include ec2-agents
 	include apache
 	include web-content
+	include accounts
+  	realize (Accounts::Virtual['orange-banana'])
 }
 
 node ip-10-0-2-226 {
