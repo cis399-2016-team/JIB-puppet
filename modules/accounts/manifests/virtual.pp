@@ -20,7 +20,7 @@ define accounts::virtual ($uid) {
     ensure            =>  directory,
     owner             =>  $title,
     group             =>  $title,
-    mode              =>  0700,
+    mode              =>  0750,
     require           =>  [ User[$title], Group[$title] ],
   }
 }
