@@ -18,6 +18,18 @@ class accounts {
                 uid             =>  509,
         }
 
+	@accounts::virtual { 'rumpus':
+                uid             =>  510,
+        }
+
+	@accounts::virtual { 'chilled-beer':
+                uid             =>  511,
+        }
+
+	@accounts::virtual { 'stevev':
+                uid             =>  512,
+        }
+
 
 }
 

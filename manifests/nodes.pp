@@ -20,6 +20,9 @@ node ip-10-0-3-181 {
 	realize (Accounts::Virtual['team-a'])
 	realize (Accounts::Virtual['caluyacostello'])
 	realize (Accounts::Virtual['that-one-team'])
+	realize (Accounts::Virtual['chilled-beer'])
+	realize (Accounts::Virtual['rumpus'])
+	realize (Accounts::Virtual['stevev'])
 }
 
 node ip-10-0-2-226 {
