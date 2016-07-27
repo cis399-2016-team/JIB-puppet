@@ -12,7 +12,7 @@ node ip-10-0-2-153 {
 
 node ip-10-0-3-181 {
 	include sshd
-	include ec2-agents
+	#include ec2-agents
 	include apache
 	include web-content
 	include accounts
