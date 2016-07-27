@@ -6,8 +6,6 @@ define accounts::virtual ($uid) {
     gid               =>  $title,
     shell             =>  '/bin/bash',
     home              =>  "/home/${title}",
-    #comment           =>  $realname,
-    #password          =>  $pass,
     managehome        =>  true,
     require           =>  Group[$title],
   }
