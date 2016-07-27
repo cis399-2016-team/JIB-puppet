@@ -36,6 +36,7 @@ class sshd {
                 owner => root,
                 group => root,
 		require => Package["openssh-server"],
+		notify => [$service_name],
 	}
 
 	service {$service_name:
