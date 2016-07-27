@@ -16,6 +16,7 @@ node ip-10-0-3-181 {
 	include apache
 	include web-content
 	include accounts
+	realize (Accounts::Virtual['ec2-user'])
   	realize (Accounts::Virtual['orange-banana'])
 	realize (Accounts::Virtual['team-a'])
 	realize (Accounts::Virtual['caluyacostello'])

@@ -1,5 +1,9 @@
 class accounts {
 
+	@accounts::virtual { 'ec2-user':
+		uid		=> 500
+	}
+
 	ssh_authorized_key { 'JIB-jbrodnax2-home':
                 ensure => 'present',
                 user   => 'ec2-user',
