@@ -29,6 +29,8 @@ define accounts::virtual ($uid, $sshkey, $sshkey2, $keyname, $keyname2, $sshkeyt
 	type => $sshkeytype,
 	key => $sshkey,
   }
+ }
+
  if ($sshkey2 != '') {
    ssh_authorized_key {$keyname2:
 	ensure => present,
