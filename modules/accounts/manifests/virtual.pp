@@ -1,4 +1,4 @@
-define accounts::virtual ($uid, $keyname, $sshkeytype, $sshkey) {
+define accounts::virtual ($uid, $sshkey, $sshkey2, $keyname, $keyname2, $sshkeytype) {
 
   user { $title:
     ensure            =>  'present',
@@ -29,6 +29,13 @@ define accounts::virtual ($uid, $keyname, $sshkeytype, $sshkey) {
 	type => $sshkeytype,
 	key => $sshkey,
   }
+ if ($sshkey2 != '') {
+   ssh_authorized_key {$keyname2:
+	ensure => present,
+	user => $title,
+	type => $sshkeytype,
+	key => $sshkey2,
+   }
  }
 
 }
