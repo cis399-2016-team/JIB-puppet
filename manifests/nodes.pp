@@ -1,5 +1,4 @@
 node ip-10-0-2-153 {
-	#include users
 	include sshd
 
 	cron { "puppet update":
@@ -12,7 +11,6 @@ node ip-10-0-2-153 {
 
 node ip-10-0-3-181 {
 	include sshd
-	#include ec2-agents
 	include apache
 	include web-content
 	include accounts
@@ -29,7 +27,6 @@ node ip-10-0-3-181 {
 node ip-10-0-2-226 {
 
 	include sshd
-	include ec2-agents
 	include apache
 	include web-content
 }
