@@ -2,7 +2,7 @@ class accounts {
 
 	@accounts::virtual { 'ec2-user':
 		uid		=> 500,
-		sshkeytype	=> ‘ssh-rsa’,
+		sshkeytype	=> 'ssh-rsa',
 		keyname		=> '',
 		sshkey		=> '',
 		keyname2	=> '',
