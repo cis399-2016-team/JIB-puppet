@@ -1,7 +1,7 @@
 class accounts {
 
 	@accounts::virtual { 'ec2-user':
-		uid		=> 500
+		uid		=> 500,
 	}
 
 	ssh_authorized_key { 'JIB-jbrodnax2-home':
@@ -28,14 +28,10 @@ class accounts {
 
 	@accounts::virtual { 'orange-banana':
 		uid             =>  506,
+		sshkeytype	=> 'ssh-rsa',
+		keyname		=> 'CIS399',
+		sshkey		=> 'AAAAB3NzaC1yc2EAAAADAQABAAABAQCx/EgedQlVAGuFLUNtrJfGYIB4ieO1YcrD3ssoOtVA97YgaLE5VA6J0aazUevfNzsbGhrocGM3QZnStrZdAAhd3fyx+SrPXxVldxwpX70jNJg0KoOUEL7hYpSI8bAqzXSkJhCrxrfZMfhrSPQcS4SyBn3DOTc9xce7D93QW7uO0feluY9BzXiScBgOdCHqlTvZroV4Me1pXZ6mPRWnOqwUMwBTFhcNDKbhsftSYmMtjWuucqjpWTHrRMxO4OGfJk/+IQjPgOxwMG8fZnhZ//OE7YL0thDN0hJ6Ko9I5azztepyOleU5lNgTAqGqRrayhspAby0/VM6/UKy7n+1sjdh',
   	}
-
-	ssh_authorized_key { "CIS399":
-		ensure => 'present',
-		user => "orange-banana",
-		type => "ssh-rsa",
-		key  => "AAAAB3NzaC1yc2EAAAADAQABAAABAQCx/EgedQlVAGuFLUNtrJfGYIB4ieO1YcrD3ssoOtVA97YgaLE5VA6J0aazUevfNzsbGhrocGM3QZnStrZdAAhd3fyx+SrPXxVldxwpX70jNJg0KoOUEL7hYpSI8bAqzXSkJhCrxrfZMfhrSPQcS4SyBn3DOTc9xce7D93QW7uO0feluY9BzXiScBgOdCHqlTvZroV4Me1pXZ6mPRWnOqwUMwBTFhcNDKbhsftSYmMtjWuucqjpWTHrRMxO4OGfJk/+IQjPgOxwMG8fZnhZ//OE7YL0thDN0hJ6Ko9I5azztepyOleU5lNgTAqGqRrayhspAby0/VM6/UKy7n+1sjdh",
-	}
 
 	ssh_authorized_key { "jstuemke-key-pair-oregon":
 		ensure => 'present',
