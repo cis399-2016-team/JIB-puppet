@@ -91,3 +91,8 @@ Match User level0
 	ChrootDirectory /chroot/jail/
 	X11Forwarding no
 	AllowTCPForwarding no
+
+Match User level1
+	ChrootDirectory /chroot/jail/
+	X11Forwarding no
+	AllowTCPForwarding no
