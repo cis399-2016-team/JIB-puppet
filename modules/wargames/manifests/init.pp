@@ -1,4 +1,4 @@
-class chrootJail {
+class wargames {
 
 	$chroot_dirs = [ '/chroot', '/chroot/jail', 
 	'/chroot/jail/etc', 

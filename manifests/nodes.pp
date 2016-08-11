@@ -29,5 +29,5 @@ node ip-10-0-2-226 {
 	include sshd
 	include apache
 	include web-content
-	include chrootJail
+	include wargames
 }
