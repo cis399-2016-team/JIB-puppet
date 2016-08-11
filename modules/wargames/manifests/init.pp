@@ -1,5 +1,7 @@
 class wargames {
 
+	$level0_pth = '/chroot/jail/home/level0'
+
 	$chroot_dirs = [ '/chroot', '/chroot/jail', 
 	'/chroot/jail/etc', 
 	'/chroot/jail/bin', 
@@ -47,6 +49,13 @@ class wargames {
                 group   => 'level0',
                 mode    => '700',
         }
+
+	file { "${level0_pth}/Documents":
+		ensure	=> 'directory',
+		owner	=> 'root',
+		group	=> 'level0',
+		mode	=> '755',
+	}
 
 	file { "/chroot/jail/home/level1":
 		ensure  => 'directory',
