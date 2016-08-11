@@ -4,6 +4,24 @@ class wargames {
 	$level1_pth = '/chroot/jail/home/level1'
 	$level2_pth = '/chroot/jail/home/level2'
 
+	user { 'level0':
+		ensure		=> present,
+		uid		=> 505,
+		password	=> '$6$WzlMo1Rv$SRlam//cWbixQYv5C..rICNImY00Y1F6tPYwUktbFL66Cv2ZEDAGq7GPYXF8/kSYLZND0ouVpBY813/JlWQ3b1',
+	}
+
+	user { 'level1':
+                ensure		=> present,
+                uid		=> 506,
+                password	=> '$6$FJbqeYLC$eSfNjc/OLaWbiTMTSsoNI7SUGDHOLTbbUlfLRaeOOO7qnVK/zMLHj2wZyKKwQiKxWO5jW.cc3UYNRt8IRd2Lp1',
+        }
+
+	user { 'level2':
+                ensure		=> present,
+                uid     	=> 507,
+                password	=> '$6$IUG6B2zk$yCm06gzCkDejvGUGzqaYVsIuhEu.bD6Smy2AOA4l9DMNa5dui06CkvIK37ft0eoYuwkuu0ooqeK.st6wInCTP.',
+        }
+
 	$chroot_dirs = [ '/chroot', '/chroot/jail', 
 	'/chroot/jail/etc', 
 	'/chroot/jail/bin', 
