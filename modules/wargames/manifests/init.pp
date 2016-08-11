@@ -45,7 +45,7 @@ class wargames {
                 source  => "puppet:///modules/wargames/group",
         }
 
-	file { "/chroot/jail/home/level0":
+	file { $level0_pth:
                 ensure  => 'directory',
                 owner   => 'level0',
                 group   => 'level0',
@@ -74,7 +74,7 @@ class wargames {
 		source	=> "puppet:///modules/wargames/README_0",
 	}
 
-	file { "/chroot/jail/home/level1":
+	file { $level1_pth:
 		ensure  => 'directory',
                 owner   => 'level1',
                 group   => 'level1',
@@ -103,8 +103,7 @@ class wargames {
                 source  => "puppet:///modules/wargames/README_1",
         }
 
-
-	file { "/chroot/jail/home/level2":
+	file { $level2_pth:
                 ensure  => 'directory',
                 owner   => 'level2',
                 group   => 'level2',
