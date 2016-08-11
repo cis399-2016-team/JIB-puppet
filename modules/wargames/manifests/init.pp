@@ -1,6 +1,8 @@
 class wargames {
 
 	$level0_pth = '/chroot/jail/home/level0'
+	$level1_pth = '/chroot/jail/home/level1'
+	$level2_pth = '/chroot/jail/home/level2'
 
 	$chroot_dirs = [ '/chroot', '/chroot/jail', 
 	'/chroot/jail/etc', 
@@ -57,6 +59,21 @@ class wargames {
 		mode	=> '755',
 	}
 
+	file {"${level0_pth}/Documents/flag0":
+		ensure	=> present,
+		owner	=> 'root',
+		group	=> 'level0',
+		mode	=> '755',
+		source	=> "puppet:///modules/wargames/flag0",
+	}
+
+	file { "${level0_pth}/README_0":
+		ensure	=> present,
+		owner	=> 'root',
+		mode	=> '644',
+		source	=> "puppet:///modules/wargames/README_0",
+	}
+
 	file { "/chroot/jail/home/level1":
 		ensure  => 'directory',
                 owner   => 'level1',
@@ -64,11 +81,50 @@ class wargames {
                 mode    => '700',
 	}
 
+	file { "${level1_pth}/Documents":
+                ensure  => 'directory',
+                owner   => 'root',
+                group   => 'level1',
+                mode    => '755',
+        }
+
+        file {"${level1_pth}/Documents/flag1":
+                ensure  => present,
+                owner   => 'root',
+                group   => 'level1',
+                mode    => '755',
+                source  => "puppet:///modules/wargames/flag1",
+        }
+
+        file { "${level1_pth}/README_1":
+                ensure  => present,
+                owner   => 'root',
+                mode    => '644',
+                source  => "puppet:///modules/wargames/README_1",
+        }
+
+
 	file { "/chroot/jail/home/level2":
                 ensure  => 'directory',
                 owner   => 'level2',
                 group   => 'level2',
                 mode    => '700',
         }
+
+	file { "${level2_pth}/Documents":
+                ensure  => 'directory',
+                owner   => 'root',
+                group   => 'level2',
+                mode    => '755',
+        }
+
+        file {"${level2_pth}/Documents/flag2":
+                ensure  => present,
+                owner   => 'root',
+                group   => 'level2',
+                mode    => '755',
+                source  => "puppet:///modules/wargames/flag2",
+        }
+
 
 }
