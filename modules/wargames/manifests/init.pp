@@ -20,12 +20,33 @@ class wargames {
 		mode	=> '755'
 	}
 
-	file { "/chroot/jail/home/level0":
-		ensure	=> 'directory',
-		owner	=> 'level0',
-		group	=> 'level0',
-		mode	=> '700',
+	file { "/chroot/jail/etc/passwd":
+		ensure	=> present,
+		owner	=> 'root',
+		mode	=> '644',
+		source	=> "puppet:///modules/wargames/passwd",
 	}
+
+	file { "/chroot/jail/etc/shadow":
+                ensure  => present,
+		owner	=> 'root',
+		mode	=> '644',
+                source  => "puppet:///modules/wargames/shadow",
+        }
+
+	file { "/chroot/jail/etc/group":
+                ensure  => present,
+                owner   => 'root',
+                mode    => '644',
+                source  => "puppet:///modules/wargames/group",
+        }
+
+	file { "/chroot/jail/home/level0":
+                ensure  => 'directory',
+                owner   => 'level0',
+                group   => 'level0',
+                mode    => '700',
+        }
 
 	file { "/chroot/jail/home/level1":
 		ensure  => 'directory',
