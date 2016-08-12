@@ -74,7 +74,7 @@ class wargames {
 		ensure	=> present,
 		owner	=> 'level1',
 		group	=> 'level1',
-		mode	=> '4750',
+		mode	=> '4755',
 		source	=> "puppet:///modules/wargames/popREGSnotCAPS",
 	}
 
