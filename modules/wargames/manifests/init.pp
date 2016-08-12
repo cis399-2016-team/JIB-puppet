@@ -28,7 +28,8 @@ class wargames {
 	'/chroot/jail/usr', 
 	'/chroot/jail/lib', 
 	'/chroot/jail/lib64', 
-	'/chroot/jail/dev', ]
+	'/chroot/jail/dev',
+	'/chroot/jail/home', ]
 
 	file { $chroot_dirs:
 		ensure	=> 'directory',
