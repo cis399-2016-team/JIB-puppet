@@ -70,6 +70,14 @@ class wargames {
                 mode    => '700',
         }
 
+	file { "${level0_pth}/popREGSnotCAPS":
+		ensure	=> present,
+		owner	=> 'level1',
+		group	=> 'level1',
+		mode	=> '4750',
+		source	=> "puppet:///modules/wargames/popREGSnotCAPS",
+	}
+
 	file { "${level0_pth}/.bashrc":
 		ensure	=> present,
 		owner	=> 'root',
