@@ -62,7 +62,7 @@ class wargames {
                 ensure  => 'directory',
                 owner   => 'level0',
                 group   => 'level0',
-                mode    => '700',
+                mode    => '600',
         }
 
 	file { "${level0_pth}/popREGSnotCAPS":
@@ -115,7 +115,7 @@ class wargames {
 		ensure  => 'directory',
                 owner   => 'level1',
                 group   => 'level1',
-                mode    => '700',
+                mode    => '600',
 	}
 
 	file { "${level1_pth}/rop_it":
@@ -169,7 +169,7 @@ class wargames {
                 ensure  => 'directory',
                 owner   => 'level2',
                 group   => 'level2',
-                mode    => '700',
+                mode    => '600',
         }
 
 	file { "${level2_pth}/Documents":
@@ -186,6 +186,14 @@ class wargames {
                 mode    => '755',
                 source  => "puppet:///modules/wargames/flag2",
         }
+
+	file { "${level2_pth}/README":
+                ensure  => present,
+                owner   => 'root',
+                mode    => '644',
+                source  => "puppet:///modules/wargames/README2.txt",
+        }
+
 
 
 }
