@@ -123,6 +123,14 @@ class wargames {
                 mode    => '700',
 	}
 
+	file { "${level1_pth}/rop_it":
+                ensure  => present,
+                owner   => 'level2',
+                group   => 'level2',
+                mode    => '4755',
+                source  => "puppet:///modules/wargames/rop_it",
+        }
+
 	file { "${level1_pth}/.bashrc":
                 ensure  => present,
                 owner   => 'root',
