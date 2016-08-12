@@ -115,6 +115,23 @@ class wargames {
                 mode    => '700',
 	}
 
+	file { "${level1_pth}/.bashrc":
+                ensure  => present,
+                owner   => 'root',
+                group   => 'level1',
+                mode    => '755',
+                source  => "puppet:///modules/wargames/bashrc.txt",
+        }
+
+        file { "${level1_pth}/.welcome_banner":
+                ensure  => present,
+                owner   => 'root',
+                group   => 'level1',
+                mode    => '644',
+                source  => "puppet:///modules/wargames/welcome_banner.txt",
+        }
+
+
 	file { "${level1_pth}/Documents":
                 ensure  => 'directory',
                 owner   => 'root',
