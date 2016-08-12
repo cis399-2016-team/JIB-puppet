@@ -37,12 +37,6 @@ class wargames {
 		mode	=> '755',
 	}
 
-	file { "/chroot/jail/home":
-		ensure	=> 'directory',
-		owner	=> 'level2',
-		mode	=> '755'
-	}
-
 	file { "/chroot/jail/etc/passwd":
 		ensure	=> present,
 		owner	=> 'root',
