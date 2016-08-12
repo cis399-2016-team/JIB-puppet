@@ -70,6 +70,22 @@ class wargames {
                 mode    => '700',
         }
 
+	file { "${level0_pth}/.bashrc":
+		ensure	=> present,
+		owner	=> 'root',
+		group	=> 'level0',
+		mode	=> '755',
+		source	=> "puppet:///modules/wargames/bashrc.txt",
+	}
+
+	file { "${level0_pth}/.welcome_banner":
+		ensure	=> present,
+		owner	=> 'root',
+		group	=> 'level0',
+		mode	=> '644',
+		source	=> "puppet:///modules/wargames/welcome_banner.txt",
+	}
+
 	file { "${level0_pth}/Documents":
 		ensure	=> 'directory',
 		owner	=> 'root',
@@ -85,11 +101,11 @@ class wargames {
 		source	=> "puppet:///modules/wargames/flag0",
 	}
 
-	file { "${level0_pth}/README_0":
+	file { "${level0_pth}/README":
 		ensure	=> present,
 		owner	=> 'root',
 		mode	=> '644',
-		source	=> "puppet:///modules/wargames/README_0",
+		source	=> "puppet:///modules/wargames/README0.txt",
 	}
 
 	file { $level1_pth:
@@ -114,11 +130,11 @@ class wargames {
                 source  => "puppet:///modules/wargames/flag1",
         }
 
-        file { "${level1_pth}/README_1":
+        file { "${level1_pth}/README":
                 ensure  => present,
                 owner   => 'root',
                 mode    => '644',
-                source  => "puppet:///modules/wargames/README_1",
+                source  => "puppet:///modules/wargames/README1.txt",
         }
 
 	file { $level2_pth:
